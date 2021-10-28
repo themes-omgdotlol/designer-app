@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charSet="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Theme Designer | Themes@omg.lol</title>
+  <link rel="stylesheet" href="../public/undraw.css" />
+  <style>
+    #openBtn,
+    #createBtn {
+      display: inline-block !important;
+      /* additional code */
+    }
+  </style>
+</head>
+
+<body>
+  <div id="__next">
+    <div class="page">
+      <div class="nav nav__hidden">
+        <div class="nav__container">
+          <div class="nav__logo">Theme Designer</div>
+        </div>
+      </div>
+      <header class="page__header" style="visibility:visible">
+        <h1>Theme Designer</h1>
+      </header>
+      <div class="subheader">
+        <div class="subheader__container">
+          <div class="page__address">By themes@omg.lol</div>
+          <p class="page__description">Start by opening or creating a theme config file</p>
+        </div>
+      </div>
+      <div class="search__status">
+        <div class="search__container">
+          <button id="createBtn" class="button__primary">Create new theme</button>
+          <button id="openBtn" class="button__secondary">Open a theme</button>
+
+          <img src="../public/img.svg" class="search__status__img" />
+          <p class="search__status__message">Get started!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var fs = require('fs');
+    const electron = require('electron').remote
+    const dialog = electron.dialog
+
+
+    document.getElementById('createBtn').addEventListener("click", () => {
+
+      let content = "Hello, this is the content of  the new file";
+
+      dialog.showSaveDialog((fileName, [
+        buttonLabel = "New Theme"
+      ]) => {
+        if (fileName === undefined) {
+          console.log("You didn't save the file");
+          return;
+        }
+
+        // fileName is a string that contains the path and filename created in the save file dialog.  
+        fs.writeFile(fileName, content, (err) => {
+          if (err) {
+            alert("An error ocurred creating the file " + err.message)
+          }
+
+          alert("The file has been succesfully saved");
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

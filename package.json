@@ -1,0 +1,63 @@
+{
+  "name": "omg.lolthemes",
+  "productName": "OMG.LOL Themes - Desktop Designer",
+  "version": "0.0.3",
+  "repository": "https://github.com/themes-omgdotlol/designer-app",
+  "description": "OMG.LOL Themes - Desktop Designer",
+  "main": "src/private/main.js",
+  "scripts": {
+    "dev": "npm run development",
+    "start": "electron .",
+    "increment-version": "versiony package.json --patch && git add . && git commit -m 'new version' && git push"
+  },
+  "author": "MatseVH (https://matsevh.eu)",
+  "copyright": "Copyright © 2021 ${author}",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^15.3.0",
+    "electron-builder": "^22.13.1",
+    "versiony": "^2.0.1"
+  },
+  "dependencies": {
+    "electron-updater": "^4.3.9",
+    "path": "^0.12.7"
+  },
+  "output": "dist",
+  "build": {
+    "appId": "com.electron.omg.lol.themes.dekstop.designer",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "icon": "assets/icon.png",
+      "category": "Development"
+    },
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "target": [
+        "dmg"
+      ],
+      "icon": "assets/icon.icns",
+      "darkModeSupport": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "installerIcon": "assets/icon.ico",
+      "uninstallerIcon": "assets/icon.ico",
+      "uninstallDisplayName": "OMG.LOL Themes - Desktop Designer - Uninstaller",
+      "license": "licenses/license.md",
+      "allowToChangeInstallationDirectory": true
+    },
+    "dmg": {
+      "icon": "assets/icon.icns",
+      "title": "${productName} ${version}",
+      "sign": false
+    }
+  }
+}

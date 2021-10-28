@@ -1,0 +1,331 @@
+<?php include "includes/login.php" ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Best theme you’ve ever had</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The best theme you’ve ever had">
+  <meta property="og:url" content="https://omgthemes.omg.lol/">
+  <meta property="og:description" content="Add a fun and beatiful theme to you OMG.LOL profile!">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@omgdotlol">
+  <meta name="twitter:creator" content="@omgdotlol">
+  <meta name="twitter:title" content="The best theme you’ve ever had">
+  <meta name="twitter:description" content="Add a fun and beatiful theme to you OMG.LOL profile!">
+  <link rel="stylesheet" type="text/css" href="../public/omg.lol.css">
+  <link rel="stylesheet" type="text/css" href="../public/coloris.css">
+
+  <script type="text/javascript" src="/js/coloris.js"></script>
+
+  <style>
+    input,
+    label {
+      display: block;
+    }
+
+    .picker {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .picker {
+      flex-shrink: 0;
+    }
+
+    .square .clr-field button,
+    .circle .clr-field button {
+      width: 25px !important;
+      height: 25px !important;
+      left: 5px;
+      right: auto;
+    }
+
+    .square .clr-field input,
+    .circle .clr-field input {
+      padding-left: 36px;
+    }
+
+    .circle .clr-field button {
+      border-radius: 50%;
+
+    }
+  </style>
+
+  <script src="https://omg.lol//meta/js/universal.js?v=2021-09-03_a"></script>
+  <script src="../public/generate.js"></script>
+  <script src="../public/sliders.js"></script>
+
+  <link rel="shortcut icon" href="/images/icon.jpg" type="image/x-icon">
+</head>
+
+<body>
+
+  <main>
+
+    <section class="indigo-1-bg gray-9-fg">
+      <div class="inner centered">
+        <h2 class="indigo-8-fg"><span class="nowrap">Make your</span> <span class="nowrap grape-6-fg">own styled</span>
+          <span class="nowrap">Profile</span>
+        </h2>
+        <p>Start by filling out the inputs and after that your theme will be generated.</p>
+        <p>Want to see the results? Click the button in the right corner...</p>
+      </div>
+
+
+      <div class="inner">
+        <div class="flexible">
+          <div class="box-big">
+            <iframe id="preview"
+              src="https://preview.profile.themes.omg.lol/index.php?bgBody=F2F3F7&bgmain=fff&mainRadius=10&pictureRadius=100&font=Consolas&titleColor=000&detailsColor=000&detailsIcon=000&pronounsColor=000&bioColor=000&linkColor=000&linkHover=000&verifyBadge=1DA1F2&verifyHover=1989ce&linkIcon=1989ce&linkIconHover=1989ce&textAlign=left&footerState=visible"
+              frameborder="0" width="100%" height="100%"></iframe>
+          </div>
+          <div class="box-small">
+
+            <p class="picker circle">
+              <label for="bg-body">Background Color</label>
+              <input name="bg-body" id="bg-body" type="text" value="#F2F3F7" data-coloris required>
+              <span class="details">Background color of the body</span>
+            </p>
+
+            <p class="picker circle">
+              <label for="main-bg">Main Background Color</label>
+              <input name="main-bg" id="main-bg" type="text" value="#fff" data-coloris required>
+              <span class="details">Main background color</span>
+            </p>
+
+            <p>
+              <label for="main-border-radius">Main Border Radius (in percent)</label>
+              <input name="main-border-radius" id="main-border-radius" type="range" value="10" min="0" max="100"
+                oninput="rangevalue.value=value" />
+              <output id="rangevalue">10</output>
+            </p>
+            <p>
+              <label for="picture-border-radius">Picture Border Radius (in percent)</label>
+              <input name="picture-border-radius" id="picture-border-radius" type="range" value="10" min="0" max="100"
+                oninput="rangevalueTwo.value=value" />
+              <output id="rangevalueTwo">10</output>
+            </p>
+
+            <p><label for="font">Font Family</label>
+              <input name="font" id="font" type="text" value='Consolas' required>
+              <span class="details">Profile page font family, you can only use web-safe fonts</span>
+            </p>
+
+            <p class="picker circle">
+              <label for="title-text-color">Title Text Color</label>
+              <input name="title-text-color" id="title-text-color" type="text" value="#000" data-coloris required>
+              <span class="details">title text color</span>
+            </p>
+
+            <p class="picker circle">
+              <label for="details-text-color">Details Text Color</label>
+              <input name="details-text-color" id="details-text-color" type="text" value="#000" data-coloris required>
+              <span class="details">Details text color</span>
+            </p>
+
+            <p class="picker circle"><label for="details-icon-color">Details Icons Color</label>
+              <input name="details-icon-color" id="details-icon-color" type="text" value="#000" data-coloris required>
+              <span class="details">Details icons color</span>
+            </p>
+
+            <p class="picker circle"><label for="pronouns-text-color">Pronouns Text Color</label>
+              <input name="pronouns-text-color" id="pronouns-text-color" type="text" value="#000" data-coloris required>
+              <span class="details">Pronouns text color</span>
+            </p>
+
+            <p class="picker circle"><label for="bio-text-color">Bio Text Color</label>
+              <input name="bio-text-color" id="bio-text-color" type="text" value="#000" data-coloris required>
+              <span class="details">Bio text color</span>
+            </p>
+
+            <p class="picker circle"><label for="link-text-color">Link Text Color</label>
+              <input name="link-text-color" id="link-text-color" type="text" value="#000" data-coloris required>
+              <span class="details">Links text color</span>
+            </p>
+
+            <p class="picker circle"><label for="link-hover-text-color">Link Hover Text Color</label>
+              <input name="link-hover-text-color" id="link-hover-text-color" type="text" value="#000" data-coloris
+                required>
+              <span class="details">Links hover text color</span>
+            </p>
+
+            <p class="picker circle"><label for="link-icon-color">Link Icon Color</label>
+              <input name="link-icon-color" id="link-icon-color" type="text" value="#000" data-coloris required>
+              <span class="details">Link icons color</span>
+            </p>
+
+            <p class="picker circle"><label for="link-icon-hover-color">Link Icon Hover Color</label>
+              <input name="link-icon-hover-color" id="link-icon-hover-color" type="text" value="#1989ce" data-coloris
+                required>
+              <span class="details">Link icons hover color</span>
+            </p>
+
+            <p class="picker circle"><label for="verification-badge-color">Verification Badge Color</label>
+              <input name="verification-badge-color" id="verification-badge-color" type="text" value="#1DA1F2"
+                data-coloris required>
+              <span class="details">Verification badge color</span>
+            </p>
+
+            <p class="picker circle"><label for="verification-badge-hover-color">Verification Badge Hover Color</label>
+              <input name="verification-badge-hover-color" id="verification-badge-hover-color" type="text"
+                value="#1989ce" data-coloris required>
+              <span class="details">Verification badge hover color</span>
+            </p>
+
+            <p><label for="bio-text-align">Bio Text Align</label>
+              <select name="bio-text-align" id="bio-text-align">
+                <option value="left">Left</option>
+                <option value="center">Center</option>
+                <option value="righ">Right</option>
+              </select>
+              <span class="details">The align that the bio text will get</span>
+            </p>
+
+            <p><label for="footer-state">Footer State</label>
+              <select name="footer-state" id="footer-state" required>
+                <option value="visible">Visible</option>
+                <option value="hidden">Hidden</option>
+              </select>
+              <span class="details">This will hide or show the footer</span>
+            </p>
+
+          </div>
+        </div>
+
+        <p style="margin: 0;"><button type="submit" name="save" onclick="javascript:generate()"><i
+              class="fas fa-edit"></i>
+            Customize</button></p>
+        <span class="details" id="error" style="color: #C92A2A;"></span>
+      </div>
+
+    </section>
+
+    <section class="indigo-1-bg gray-9-fg">
+      <div class="inner">
+        <p><label for="result">Your custom profile css</label>
+          <textarea name="result" id="result" class="hidden" style="height: 50rem" readonly></textarea>
+          <span class="details">Want some more info to use this in your profile? <a href="/use-theme?default=true"
+              target="_blank" rel="noopener noreferrer">Click Here</a></span>
+        </p>
+      </div>
+    </section>
+
+    <section id="modified">
+      <div class="inner">
+        <p><span style="margin-right: 1em;" class="nowrap"><i class="fa-solid fa-code-merge"></i> Version <i
+              class="fas fa-long-arrow-alt-right" style="margin: 0 .25em;"></i> Beta 1.0.2</span>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <p style="margin: 0;"><a title="Refresh Preview" id="reloadBtn" style="display: block;" href="javascript:reload();"
+      onclick="javascript:reload()"><i class="fas fa-sync"></i></a></p>
+
+  <script>
+    var bodyBG = document.getElementById("bg-body");
+    var mainBG = document.getElementById("main-bg");
+    var mainRadius = document.getElementById("main-border-radius");
+    var pictureRadius = document.getElementById("picture-border-radius");
+    var font = document.getElementById("font");
+    var titleText = document.getElementById("title-text-color");
+    var detailsText = document.getElementById("details-text-color");
+    var detailsIcon = document.getElementById("details-icon-color");
+    var pronounsText = document.getElementById("pronouns-text-color");
+    var bioText = document.getElementById("bio-text-color");
+    var linkText = document.getElementById("link-text-color");
+    var linkHover = document.getElementById("link-hover-text-color");
+    var linkIcon = document.getElementById("link-icon-color");
+    var LinkIconHover = document.getElementById("link-icon-hover-color");
+    var verificationColor = document.getElementById("verification-badge-color");
+    var verificationHover = document.getElementById(
+      "verification-badge-hover-color"
+    );
+    var textAlign = document.getElementById("bio-text-align");
+    var footerState = document.getElementById("footer-state");
+
+    function reload() {
+      document
+        .getElementById("preview")
+        .setAttribute(
+          "src",
+          "https://preview.profile.themes.omg.lol/index.php?bgBody=" +
+          bodyBG.value.substring(1) +
+          "&bgmain=" +
+          mainBG.value.substring(1) +
+          "&mainRadius=" +
+          mainRadius.value +
+          "&pictureRadius=" +
+          pictureRadius.value +
+          "&font=" +
+          font.value +
+          "&titleColor=" +
+          titleText.value.substring(1) +
+          "&detailsColor=" +
+          detailsText.value.substring(1) +
+          "&detailsIcon=" +
+          pronounsText.value.substring(1) +
+          "&pronounsColor=" +
+          bioText.value.substring(1) +
+          "&bioColor=" +
+          bioText.value.substring(1) +
+          "&linkColor=" +
+          linkIcon.value.substring(1) +
+          "&linkHover=" +
+          linkHover.value.substring(1) +
+          "&verifyBadge=" +
+          verificationColor.value.substring(1) +
+          "&verifyHover=" +
+          verificationHover.value.substring(1) +
+          "&linkIcon=" +
+          linkIcon.value.substring(1) +
+          "&linkIconHover=" +
+          LinkIconHover.value.substring(1) +
+          "&textAlign=" +
+          textAlign.value +
+          "&footerState=" +
+          footerState.value +
+          ""
+        );
+    }
+  </script>
+  <script>
+    Coloris({
+      // The bound input fields are wrapped in a div that adds a thumbnail showing the current color
+      // and a button to open the color picker (for accessibility only). If you wish to keep your 
+      // fields unaltered, set this to false, in which case you will lose the color thumbnail and 
+      // the accessible button (not recommended).
+      wrap: true,
+
+      // Available themes: light, dark, polaroid, polaroid-dark.
+      // More themes might be added in the future.
+      theme: 'light',
+
+      // The margin between the input fields and the color picker's dialog.
+      margin: 2,
+
+      // Set the prefered color string format:
+      //  * hex: outputs #RRGGBB or #RRGGBBAA.
+      //  * rgb: outputs rgb(R,G,B) or rgba(R,G,B,A).
+      //  * mixed: defaults to #RRGGBB when alpha is 1, otherwise rgba(R,G,B,A).
+      format: 'hex',
+
+      // Show an optional clear button and set its label
+      clearButton: {
+        show: false,
+        label: 'Clear'
+      },
+
+      // An array of the desired color swatches to display. If omitted or the array is empty,
+      // the color swatches will be disabled.
+      swatches: []
+    });
+  </script>
+
+</body>
+
+</html>
