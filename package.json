@@ -1,7 +1,7 @@
 {
   "name": "profiler",
   "productName": "Profiler",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "repository": "https://github.com/themes-omgdotlol/designer-app",
   "description": "Profiler",
   "main": "src/private/main.js",
@@ -9,7 +9,7 @@
     "dev": "npm run development",
     "start": "electron .",
     "build": "electron-builder",
-    "increment-version": "versiony package.json --patch && git add . && git commit -m 'new version' && git tag -a '1.0.0' -m '1.0.0' && git push"
+    "increment-version": "versiony package.json --patch"
   },
   "author": "MatseVH (https://matsevh.eu)",
   "copyright": "Copyright © 2021 ${author}",
@@ -30,12 +30,12 @@
       "target": [
         "nsis"
       ],
-      "icon": "assets/icon.ico"
+      "icon": "assets/profiler.ico"
     },
     "nsis": {
       "oneClick": false,
-      "installerIcon": "assets/icon.ico",
-      "uninstallerIcon": "assets/icon.ico",
+      "installerIcon": "assets/profiler.ico",
+      "uninstallerIcon": "assets/profiler.ico",
       "uninstallDisplayName": "Profiler - Uninstaller",
       "license": "licenses/license.md",
       "allowToChangeInstallationDirectory": true
