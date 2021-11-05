@@ -4,12 +4,16 @@
 const { app, BrowserWindow, Menu } = require("electron");
 const path = require("path");
 const { autoUpdater } = require("electron-updater");
+// const rpc = require("discord-rich-presence")("881991336818008124");
+// const package = require("../../package.json");
 
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 900,
+    height: 650,
+    minWidth: 900,
+    minHeight: 650,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       nodeIntegration: true,
@@ -20,80 +24,82 @@ function createWindow() {
       nodeIntegrationInSubFrames: true, //for subContent nodeIntegration Enable
       webviewTag: true, //for webView
     },
+    // frame: false,
   });
 
   // and load the index.html of the app.
   mainWindow.loadFile("src/view/index.html");
+  // mainWindow.setMenu(null);
 
-  const template = [
-    // { role: 'fileMenu' }
-    {
-      label: "File",
-      submenu: [
-        {
-          label: "Create new theme",
-          accelerator: "CmdorCtrl+M",
-          click: async () => {
-            createTheme("test");
-          },
-        },
-        {
-          label: "Open theme",
-          accelerator: "CmdorCtrl+O",
-          click: async () => {
-            // Open theme
-            module.exports = {
-              openTheme: function () {
-                const files = dialog.showOpenDialog(mainWindow, {
-                  properties: ["openTheme"],
-                  filters: [
-                    { name: "Theme", extensions: ["themeConfig.json"] },
-                  ],
-                });
+  // const template = [
+  //   // { role: 'fileMenu' }
+  //   {
+  //     label: "File",
+  //     submenu: [
+  //       {
+  //         label: "Create new theme",
+  //         accelerator: "CmdorCtrl+M",
+  //         click: async () => {
+  //           createTheme("test");
+  //         },
+  //       },
+  //       {
+  //         label: "Open theme",
+  //         accelerator: "CmdorCtrl+O",
+  //         click: async () => {
+  //           // Open theme
+  //           module.exports = {
+  //             openTheme: function () {
+  //               const files = dialog.showOpenDialog(mainWindow, {
+  //                 properties: ["openTheme"],
+  //                 filters: [
+  //                   { name: "Theme", extensions: ["themeConfig.json"] },
+  //                 ],
+  //               });
 
-                if (!files) return;
-              },
-            };
-          },
-        },
-      ],
-    },
-    // { role: 'helpMenu' }
-    {
-      label: "Help",
-      submenu: [
-        {
-          label: "Get help",
-          click: async () => {
-            const { shell } = require("electron");
-            await shell.openExternal("https://designer.omg.lol/help");
-          },
-        },
-      ],
-    },
-    // { role: 'creditsMenu' }
-    {
-      label: "Credits",
-      submenu: [
-        {
-          label: "Themes@OMG.LOL",
-          click: async () => {
-            const { shell } = require("electron");
-            await shell.openExternal("https://themes.omg.lol");
-          },
-        },
-        {
-          label: "MatseVH",
-          click: async () => {
-            const { shell } = require("electron");
-            await shell.openExternal("https://matsevh.eu");
-          },
-        },
-      ],
-    },
-  ];
-  const menu = Menu.buildFromTemplate(template);
-  mainWindow.setMenu(menu);
+  //               if (!files) return;
+  //             },
+  //           };
+  //         },
+  //       },
+  //     ],
+  //   },
+  //   // { role: 'helpMenu' }
+  //   {
+  //     label: "Help",
+  //     submenu: [
+  //       {
+  //         label: "Get help",
+  //         click: async () => {
+  //           const { shell } = require("electron");
+  //           await shell.openExternal("https://designer.omg.lol/help");
+  //         },
+  //       },
+  //     ],
+  //   },
+  //   // { role: 'creditsMenu' }
+  //   {
+  //     label: "Credits",
+  //     submenu: [
+  //       {
+  //         label: "Themes@OMG.LOL",
+  //         click: async () => {
+  //           const { shell } = require("electron");
+  //           await shell.openExternal("https://themes.omg.lol");
+  //         },
+  //       },
+  //       {
+  //         label: "MatseVH",
+  //         click: async () => {
+  //           const { shell } = require("electron");
+  //           await shell.openExternal("https://matsevh.eu");
+  //         },
+  //       },
+  //     ],
+  //   },
+  // ];
+  // const menu = Menu.buildFromTemplate(template);
+  // mainWindow.setMenu(menu);
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
@@ -143,3 +149,17 @@ function createTheme(name) {
     }
   );
 }
+
+// function setPresence(details, state) {
+//   rpc.updatePresence({
+//     details: details,
+//     state: state,
+//     largeImageKey: "profiler",
+//     largeImageText: "Profiler",
+//     smallImageKey: "icon",
+//     smallImageText: "Made for OMG.LOL",
+//     instance: 0,
+//   });
+// }
+
+// setPresence("OMG.LOL Profile designer", "v" + package.version);

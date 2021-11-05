@@ -95,6 +95,7 @@ svg:not(:root) {
   overflow: hidden;
 }
 button,
+a,
 input,
 optgroup,
 select,
@@ -105,16 +106,19 @@ textarea {
   margin: 0;
 }
 button,
+a,
 input {
   overflow: visible;
 }
 button,
+a,
 select {
   text-transform: none;
 }
 [type="reset"],
 [type="submit"],
 button,
+a,
 html [type="button"] {
   -webkit-appearance: button;
 }
@@ -212,7 +216,8 @@ ul,
 ul li {
   list-style-type: none;
 }
-button {
+button,
+a {
   font-family: Muli, sans-serif;
   outline: none;
   background: transparent;
@@ -221,7 +226,8 @@ button {
 }
 .dropdown,
 .pointered,
-button {
+button,
+a {
   cursor: pointer;
 }
 .dropdown {
@@ -319,6 +325,20 @@ p {
   font-weight: 700;
   min-width: 160px;
 }
+
+a .button__primary {
+  width: 100%;
+  max-width: 250px;
+  background-color: #665df5;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  height: 48px;
+  font-size: 14px;
+  font-weight: 700;
+  min-width: 160px;
+}
+
 @media (min-width: 992px) {
   .button__primary {
     transition: background-color 0.3s;
@@ -553,8 +573,8 @@ p {
   cursor: pointer;
 }
 .page {
-  width: 1356px;
-  max-width: 80%;
+  width: 1500px;
+  max-width: 90%;
   margin: 64px auto;
 }
 .page__header {
@@ -1185,4 +1205,30 @@ p {
 .community__grid__box__content {
   font-size: 14px;
   margin: 0;
+}
+
+.box-big {
+  flex-grow: 1;
+  flex-basis: 25em !important;
+  width: 50em;
+  margin: 0 1em;
+}
+
+.box {
+  flex-grow: 1;
+  flex-basis: 15em;
+  margin: 0 1em;
+}
+
+.box-small {
+  flex-grow: 0.25;
+  flex-basis: 1em;
+  width: 25em;
+  margin: 0 1em;
+}
+
+.inner {
+  padding: 0 -2.5em !important;
+  max-width: 110em !important;
+  margin: 0em auto;
 }

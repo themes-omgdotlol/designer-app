@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-US" class="">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Profiler Editor</title>
+
+  <link rel="stylesheet" href="../public/css/editor.css">
+</head>
+
+<body class="antialiased text-body font-body classic-navbar editor editor--hide-y " data-editor="shuffle">
+
+  <div class="overlay overlay--full" id="overlay--full"></div>
+  <div class="overlay overlay--main" id="overlay--main"></div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <aside class="components-menu">
+        <div class="components-menu-inner">
+          <div class="components-menu__logo border-bottom" id="components-menu__logo">
+            <img src="https://shuffle.dev/vendor/shuffle/img/brand/shuffle-logo-bg.svg" alt="Shuffle"
+              class="logo logo-light-mode"> Profiler
+          </div>
+
+
+          <ul class="nav components-menu__nav" id="components-menu__nav">
+            <li class="nav-item mt-1">
+              <h5 class="components-menu__header mt-1">Base <small class="components-task-info"
+                  id="components-task-build">Use ready-made</small></h5>
+            </li>
+            <li class="nav-item components-menu__category">
+              <a class="nav-link" data-category="navigations">Navigations</a>
+            </li>
+            <li class="nav-item components-menu__category">
+              <a class="nav-link" data-category="headers">Headers</a>
+            </li>
+            <li class="nav-item components-menu__category">
+              <a class="nav-link" data-category="pricing">Pricing</a>
+            </li>
+            <li class="nav-item components-menu__category">
+              <a class="nav-link" data-category="call-to-action">Call to action</a>
+            </li>
+            <li class="nav-item components-menu__category">
+              <a class="nav-link" data-category="sign-in">Sign in / Sign up</a>
+            </li>
+            <li class="nav-item components-menu__category">
+              <a class="nav-link" data-category="blog">Blog posts</a>
+            </li>
+            <li class="nav-item components-menu__category">
+              <a class="nav-link" data-category="content">Content</a>
+            </li>
+            <li class="nav-item components-menu__category">
+              <a class="nav-link" data-category="newsletter">Newsletter</a>
+            </li>
+            <li class="nav-item components-menu__category">
+              <a class="nav-link" data-category="features">Features</a>
+            </li>
+            <li class="nav-item components-menu__category">
+              <a class="nav-link" data-category="how-it-works">How it works</a>
+            </li>
+            <li class="nav-item components-menu__category">
+              <a class="nav-link" data-category="testimonials">Testimonials</a>
+            </li>
+            <li class="nav-item components-menu__category">
+              <a class="nav-link" data-category="logo-clouds">Logo clouds</a>
+            </li>
+            <li class="nav-item components-menu__category">
+              <a class="nav-link" data-category="portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item components-menu__category">
+              <a class="nav-link" data-category="team">Team</a>
+            </li>
+            <li class="nav-item components-menu__category">
+              <a class="nav-link" data-category="faqs">FAQ</a>
+            </li>
+            <li class="nav-item components-menu__category">
+              <a class="nav-link" data-category="contacts">Contacts</a>
+            </li>
+            <li class="nav-item components-menu__category">
+              <a class="nav-link" data-category="applications">Applications</a>
+            </li>
+            <li class="nav-item components-menu__category">
+              <a class="nav-link" data-category="http-codes">Http codes</a>
+            </li>
+            <li class="nav-item components-menu__category">
+              <a class="nav-link" data-category="stats">Stats</a>
+            </li>
+            <li class="nav-item components-menu__category">
+              <a class="nav-link" data-category="cookies">Cookies</a>
+            </li>
+            <li class="nav-item components-menu__category">
+              <a class="nav-link" data-category="footers">Footers</a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <main class="col overflow-x" id="main">
+        <div class="main__menu d-flex">
+          <div class="ml-auto">
+
+            <a href="#" class="btn btn-primary track-click mr-1" target="_blank" rel="nofollow noopener">
+              Export project
+            </a>
+            <a href="#" class="btn btn-secondary track-click mr-1" data-to rel="nofollow noopener">
+              <i class="icon-history"></i> Reload Preview
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- <div class="browser browser--desktop" data-mockup="theme">
+      <div class="">
+        <div class="">
+          <div class="browser__content">
+            <iframe title="Edited page content" frameBorder="0" width="100%"
+              src="https://preview.profile.themes.omg.lol/index.php?bgBody=F2F3F7&bgmain=fff&mainRadius=10&pictureRadius=100&font=Consolas&titleColor=000&detailsColor=000&detailsIcon=000&pronounsColor=000&bioColor=000&linkColor=000&linkHover=000&verifyBadge=1DA1F2&verifyHover=1989ce&linkIcon=1989ce&linkIconHover=1989ce&textAlign=left&footerState=visible"
+              id="iframe-theme"></iframe>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="browser browser--desktop" data-mockup="content">
+      <div class="browser__wrapper">
+
+        <div class="browser__container browser--show">
+          <div class="browser__content">
+            <iframe title="Edited page content" frameBorder="0" width="100%"
+              src="https://preview.profile.themes.omg.lol/index.php?bgBody=F2F3F7&bgmain=fff&mainRadius=10&pictureRadius=100&font=Consolas&titleColor=000&detailsColor=000&detailsIcon=000&pronounsColor=000&bioColor=000&linkColor=000&linkHover=000&verifyBadge=1DA1F2&verifyHover=1989ce&linkIcon=1989ce&linkIconHover=1989ce&textAlign=left&footerState=visible"
+              id="iframe-content"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
