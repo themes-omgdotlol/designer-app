@@ -1,7 +1,7 @@
 {
   "name": "profiler",
   "productName": "Profiler",
-  "version": "0.0.5",
+  "version": "0.0.1",
   "repository": "https://github.com/themes-omgdotlol/designer-app",
   "description": "Profiler",
   "main": "src/private/main.js",
@@ -9,7 +9,8 @@
     "dev": "npm run development",
     "start": "electron .",
     "build": "electron-builder",
-    "increment-version": "versiony package.json --patch"
+    "increment-version": "versiony package.json --patch",
+    "dist": "electron-builder --publish always"
   },
   "author": "MatseVH (https://matsevh.eu)",
   "copyright": "Copyright © 2021 ${author}",
@@ -20,11 +21,18 @@
     "versiony": "^2.0.1"
   },
   "dependencies": {
+    "electron-log": "^4.4.1",
     "electron-updater": "^4.3.9",
     "path": "^0.12.7"
   },
   "output": "dist",
   "build": {
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "http://127.0.0.1:8080/"
+      }
+    ],
     "appId": "com.electron.profiler",
     "win": {
       "target": [
@@ -38,7 +46,7 @@
       "uninstallerIcon": "./assets/profiler.ico",
       "uninstallDisplayName": "Profiler - Uninstaller",
       "license": "licenses/license.md",
-      "allowToChangeInstallationDirectory": true
+      "allowToChangeInstallationDirectory": false
     }
   }
 }
