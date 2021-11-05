@@ -105,12 +105,56 @@ function createWindow() {
   // mainWindow.webContents.openDevTools()
 }
 
+//single instance logic!!!
+const shouldQuit = app.makeSingleInstance((commandLine, workingDirectory) => {
+  //eslint-disable-line
+  if (window) {
+    if (!state.id) {
+      if (process.platform === "win32") {
+        if (window.isMinimized()) window.restore();
+        window.focus();
+      } else if (process.platform === "darwin") {
+        app.dock.show();
+        setTimeout(() => {
+          if (window.isMinimized()) window.restore();
+          window.focus();
+        }, 250);
+      }
+    } else {
+      setTimeout(
+        () =>
+          notifier.notifyWelcome(
+            state.available,
+            icons.trayAvailable,
+            icons.trayBusy
+          ),
+        250
+      );
+    }
+  }
+
+  return ++runningInstances > 1;
+});
+
+if (shouldQuit) {
+  app.quit();
+}
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
+  //check for updates every minute
+  if (isPacked) {
+    checkForUpdates();
+    setInterval(checkForUpdates, 60000);
+  }
+
+  const checkForUpdates = () => {
+    autoUpdater.checkForUpdatesAndNotify(); //no need for quitAndInstall => https://github.com/electron-userland/electron-builder/issues/2977#issuecomment-397887981
+  };
+
   createWindow();
-  autoUpdater.checkForUpdatesAndNotify();
 
   app.on("activate", function () {
     // On macOS it's common to re-create a window in the app when the

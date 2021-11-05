@@ -1,7 +1,7 @@
 {
   "name": "profiler",
   "productName": "Profiler",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "repository": "https://github.com/themes-omgdotlol/designer-app",
   "description": "Profiler",
   "main": "src/private/main.js",
@@ -30,12 +30,12 @@
       "target": [
         "nsis"
       ],
-      "icon": "assets/profiler.ico"
+      "icon": "./assets/profiler.ico"
     },
     "nsis": {
       "oneClick": false,
-      "installerIcon": "assets/profiler.ico",
-      "uninstallerIcon": "assets/profiler.ico",
+      "installerIcon": "./assets/profiler.ico",
+      "uninstallerIcon": "./assets/profiler.ico",
       "uninstallDisplayName": "Profiler - Uninstaller",
       "license": "licenses/license.md",
       "allowToChangeInstallationDirectory": true
