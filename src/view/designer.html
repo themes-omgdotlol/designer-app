@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="../public/css/editor.css">
   <link rel="stylesheet" href="../public/css/coloris.css">
   <script src="../public/js/coloris.js"></script>
+  <script src="../public/js/fileSaver.js"></script>
+  <script src="../public/js/generate.js"></script>
 </head>
 
 <body class="antialiased text-body font-body classic-navbar editor" data-editor="shuffle">
@@ -24,7 +26,7 @@
 
 
           <ul class="nav components-menu__nav " id="components-menu__nav">
-            <li class="nav-item mt-1">
+            <!-- <li class="nav-item mt-1">
               <h5 class="components-menu__header mt-1">Picture location</h5>
             </li>
             <li class="nav-item components-menu__category">
@@ -37,7 +39,7 @@
             </li>
             <li class="nav-item components-menu__category">
               <hr>
-            </li>
+            </li> -->
             <li class="nav-item mt-1">
               <h5 class="components-menu__header mt-1">Background Color</h5>
             </li>
@@ -158,6 +160,9 @@
               <hr>
             </li>
             <li class="nav-item components-menu__category">
+              <small id="result"></small>
+            </li>
+            <li class="nav-item components-menu__category">
               <small>&copy; 2021 All rights reserved, Profiler</small>
             </li>
           </ul>
@@ -167,9 +172,9 @@
         <div class="main__menu d-flex">
           <div class="ml-auto">
 
-            <a href="#" class="btn btn-primary track-click mr-1" target="_blank" rel="nofollow noopener">
+            <button onclick="generate();" class="btn btn-primary track-click mr-1" rel="nofollow noopener">
               Export project
-            </a>
+            </button>
             <a href="#" class="btn btn-secondary track-click mr-1" data-to rel="nofollow noopener">
               <i class="icon-history"></i> Reload Preview
             </a>
