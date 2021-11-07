@@ -8,8 +8,20 @@
   "scripts": {
     "dev": "npm run development",
     "start": "electron .",
-    "build": "electron-builder",
-    "build:linux": "electron-builder --linux",
+    "build": "electron-builder --x64 --ia32 -wl",
+    "build:linux": "electron-builder -l",
+    "build:win": "electron-builder --x64 --ia32 -w",
+    "build:mac": "electron-builder -m",
+    "development": "electron-devtools-installer --devtoolsVersion=4.4.2 --appPath=./dist/profiler-darwin-x64/profiler.app/ --outputPath=./dist/profiler-darwin-x64/profiler.app/",
+    "development:linux": "electron-devtools-installer --devtoolsVersion=4.4.2 --appPath=./dist/profiler-linux-x64/profiler.app/ --outputPath=./dist/profiler-linux-x64/profiler.app/",
+    "development:win": "electron-devtools-installer --devtoolsVersion=4.4.2 --appPath=./dist/profiler-win32-x64/profiler.app/ --outputPath=./dist/profiler-win32-x64/profiler.app/",
+    "development:mac": "electron-devtools-installer --devtoolsVersion=4.4.2 --appPath=./dist/profiler-darwin-x64/profiler.app/ --outputPath=./dist/profiler-darwin-x64/profiler.app/",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ext .js,.vue src/",
+    "prepublish": "npm run lint && npm run test",
+    "postpublish": "git push origin HEAD:gh-pages && git push origin master:gh-pages",
+    "preversion": "npm run lint && npm run test",
+    "version": "npm run build && git add -A && git commit -m \"chore(release): v$npm_package_version\" && git tag -a v$npm_package_version -m \"chore(release): v$npm_package_version\" && git push && git push --tags && npm publish",
     "increment-version": "versiony package.json --patch",
     "dist": "electron-builder --publish always"
   },
@@ -37,13 +49,19 @@
     },
     "linux": {
       "target": [
-        "deb",
-        "snap",
-        "rpm"
+        "AppImage"
       ],
+      "maintainer": "MatseVH",
       "icon": "./assets/profiler.ico",
       "synopsis": "Design your own omg.lol profile",
       "category": "Development"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "category": "public.app-category.developer-tools",
+      "type": "distribution"
     },
     "nsis": {
       "oneClick": false,
@@ -51,7 +69,15 @@
       "uninstallerIcon": "./assets/profiler.ico",
       "uninstallDisplayName": "Profiler - Uninstaller",
       "license": "licenses/license.md",
-      "allowToChangeInstallationDirectory": false
+      "allowToChangeInstallationDirectory": false,
+      "deleteAppDataOnUninstall": true,
+      "multiLanguageInstaller": true,
+      "createStartMenuShortcut": true
+    },
+    "dmg": {
+      "icon": "./assets/profiler.icns",
+      "title": "${productName} ${version}",
+      "sign": false
     }
   }
 }
