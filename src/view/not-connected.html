@@ -24,7 +24,7 @@
   </style>
 </head>
 
-<body>
+<body onload="reload()">
 
   <div id="__next">
     <div class="page">
@@ -34,31 +34,32 @@
         </div>
       </div>
       <header class="page__header" style="visibility:visible">
-        <h1>Profiler</h1>
+        <h1>Not connected</h1>
       </header>
       <div class="subheader">
         <div class="subheader__container">
           <div class="page__address">Design your own custom omg.lol profile</div>
-          <p class="page__description">You can create your own profile by creating a new one. (In the future we will add
-            a feature to make it possible to save and open a theme.</p>
-        </div>
-      </div>
-      <div class="search__status">
-        <div class="search__container">
-          <button id="createBtn" onclick="window.location.href = 'designer.html'" rel="noopener noreferrer"
-            class="button__primary">Create new theme</button>
-          <!-- <button id="testBtn" onclick="window.location.href = 'test.html'" rel="noopener noreferrer"
-            class="button__secondary">Test file</button><br> -->
-          <!-- <button id="openBtn" class="button__secondary">Open a theme</button> -->
-
-          <img src="../public/img.svg" class="search__status__img" />
-          <p class="search__status__message">Get started!</p>
+          <p class="page__description">Connect to internet to get started</p>
         </div>
       </div>
     </div>
   </div>
 
-  <script src="../private/renderer.js"></script>
+  <script>
+    function reload() {
+      const checkInternetConnected = require("check-internet-connected");
+
+      setInterval(() => {
+        checkInternetConnected()
+          .then(() => {
+            window.location.href = 'index.html'
+          })
+          .catch((err) => {
+            return console.log('Internet Connection Checked: Not connected')
+          });
+      }, 30000);
+    }
+  </script>
 </body>
 
 </html>

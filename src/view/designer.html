@@ -11,21 +11,34 @@
   <script src="../public/js/coloris.js"></script>
   <script src="../public/js/fileSaver.js"></script>
   <script src="../public/js/generate.js"></script>
+  <script src="../public/js/sliders.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="antialiased text-body font-body classic-navbar editor" data-editor="shuffle">
+<body onload="reload();" class="antialiased text-body font-body classic-navbar editor" data-editor="shuffle">
 
   <div class="container-fluid">
     <div class="row">
       <aside class="components-menu">
         <div class="components-menu-inner">
           <div class="components-menu__logo " id="components-menu__logo">
-            <img src="../public/images/profiler.svg" alt="Shuffle" class="logo">
-            <span class="icon-text">Profiler</span>
+            <img src="../public/images/iconpluslogo.svg" alt="Shuffle" class="logo">
           </div>
 
 
           <ul class="nav components-menu__nav " id="components-menu__nav">
+            <li class="nav-item mt-1">
+              <h5 class="components-menu__header mt-1">Theme name</h5>
+            </li>
+            <li class="components-menu__category">
+              <input onfocusout="reload()" id="themeName" class="btn-white nav-link" placeholder="Theme Name" required>
+            </li>
+            <li class="nav-item components-menu__category">
+              <hr>
+            </li>
             <!-- <li class="nav-item mt-1">
               <h5 class="components-menu__header mt-1">Picture location</h5>
             </li>
@@ -44,13 +57,15 @@
               <h5 class="components-menu__header mt-1">Background Color</h5>
             </li>
             <li class="nav-item components-menu__category">
-              <input name="bgColor" class="btn-white nav-link" value="#f2f3f7" data-coloris required>
+              <input onfocusout="reload()" onfocusout="reload()" id="bgColor" class="btn-white nav-link" value="#f2f3f7"
+                data-coloris required>
             </li>
             <li class="nav-item mt-1">
               <h5 class="components-menu__header mt-1">Main Background Color</h5>
             </li>
             <li class="nav-item components-menu__category">
-              <input name="mainColor" class="btn-white nav-link" value="#ffffff" data-coloris required>
+              <input onfocusout="reload()" id="mainColor" class="btn-white nav-link" value="#ffffff" data-coloris
+                required>
             </li>
             <li class="nav-item components-menu__category">
               <hr>
@@ -59,37 +74,43 @@
               <h5 class="components-menu__header mt-1">Title Text Color</h5>
             </li>
             <li class="nav-item components-menu__category">
-              <input name="titleTextColor" class="btn-white nav-link" value="#000000" data-coloris required>
+              <input onfocusout="reload()" id="titleTextColor" class="btn-white nav-link" value="#000000" data-coloris
+                required>
             </li>
             <li class="nav-item mt-1">
               <h5 class="components-menu__header mt-1">Details Text Color</h5>
             </li>
             <li class="nav-item components-menu__category">
-              <input name="detailsTextColor" class="btn-white nav-link" value="#000000" data-coloris required>
+              <input onfocusout="reload()" id="detailsTextColor" class="btn-white nav-link" value="#000000" data-coloris
+                required>
             </li>
             <li class="nav-item mt-1">
               <h5 class="components-menu__header mt-1">Pronouns Text Color</h5>
             </li>
             <li class="nav-item components-menu__category">
-              <input name="pronounsTextColor" class="btn-white nav-link" value="#000000" data-coloris required>
+              <input onfocusout="reload()" id="pronounsTextColor" class="btn-white nav-link" value="#000000"
+                data-coloris required>
             </li>
             <li class="nav-item mt-1">
               <h5 class="components-menu__header mt-1">Bio Text Color</h5>
             </li>
             <li class="nav-item components-menu__category">
-              <input name="bioTextColor" class="btn-white nav-link" value="#000000" data-coloris required>
+              <input onfocusout="reload()" id="bioTextColor" class="btn-white nav-link" value="#000000" data-coloris
+                required>
             </li>
             <li class="nav-item mt-1">
               <h5 class="components-menu__header mt-1">Link Text Color</h5>
             </li>
             <li class="nav-item components-menu__category">
-              <input name="linkTextColor" class="btn-white nav-link" value="#000000" data-coloris required>
+              <input onfocusout="reload()" id="linkTextColor" class="btn-white nav-link" value="#000000" data-coloris
+                required>
             </li>
             <li class="nav-item mt-1">
               <h5 class="components-menu__header mt-1">Link Hover Text Color</h5>
             </li>
             <li class="nav-item components-menu__category">
-              <input name="linkHoverTextColor" class="btn-white nav-link" value="#000000" data-coloris required>
+              <input onfocusout="reload()" id="linkHoverTextColor" class="btn-white nav-link" value="#000000"
+                data-coloris required>
             </li>
             <li class="nav-item components-menu__category">
               <hr>
@@ -98,38 +119,43 @@
               <h5 class="components-menu__header mt-1">Details Icon Color</h5>
             </li>
             <li class="nav-item components-menu__category">
-              <input name="detailsIconColor" class="btn-white nav-link" value="#000000" data-coloris required>
+              <input onfocusout="reload()" id="detailsIconColor" class="btn-white nav-link" value="#000000" data-coloris
+                required>
             </li>
             <li class="nav-item mt-1">
               <h5 class="components-menu__header mt-1">Details Icon Hover Color</h5>
             </li>
             <li class="nav-item components-menu__category">
-              <input name="detailsIconHoverColor" class="btn-white nav-link" value="#000000" data-coloris required>
+              <input onfocusout="reload()" id="detailsIconHoverColor" class="btn-white nav-link" value="#000000"
+                data-coloris required>
             </li>
             <li class="nav-item mt-1">
               <h5 class="components-menu__header mt-1">Link Icon Color</h5>
             </li>
             <li class="nav-item components-menu__category">
-              <input name="linkIconColor" class="btn-white nav-link" value="#000000" data-coloris required>
+              <input onfocusout="reload()" id="linkIconColor" class="btn-white nav-link" value="#000000" data-coloris
+                required>
             </li>
             <li class="nav-item mt-1">
               <h5 class="components-menu__header mt-1">Link Icon Hover Color</h5>
             </li>
             <li class="nav-item components-menu__category">
-              <input name="linkIconHoverColor" class="btn-white nav-link" value="#1989ce" data-coloris required>
+              <input onfocusout="reload()" id="linkIconHoverColor" class="btn-white nav-link" value="#1989ce"
+                data-coloris required>
             </li>
             <li class="nav-item mt-1">
               <h5 class="components-menu__header mt-1">Verification Badge Color</h5>
             </li>
             <li class="nav-item components-menu__category">
-              <input name="verificationBadgeColor" class="btn-white nav-link" value="#1da1f2" data-coloris required>
+              <input onfocusout="reload()" id="verificationBadgeColor" class="btn-white nav-link" value="#1da1f2"
+                data-coloris required>
             </li>
             <li class="nav-item mt-1">
               <h5 class="components-menu__header mt-1">Verification Badge Hover Color</h5>
             </li>
             <li class="nav-item components-menu__category">
-              <input name="verificationBadgeHoverColor" class="btn-white nav-link" value="#1989ce" data-coloris
-                required>
+              <input onfocusout="reload()" id="verificationBadgeHoverColor" class="btn-white nav-link" value="#1989ce"
+                data-coloris required>
             </li>
             <li class="nav-item components-menu__category">
               <hr>
@@ -138,7 +164,7 @@
               <h5 class="components-menu__header mt-1">Bio Text Align</h5>
             </li>
             <li class="nav-item components-menu__category">
-              <select name="bioTextAlign" class="btn-white dropdown nav-link" required>
+              <select id="bioTextAlign" class="btn-white dropdown nav-link" required>
                 <option value="left">Left</option>
                 <option value="Center">Center</option>
                 <option value="right">Right</option>
@@ -148,19 +174,48 @@
               <hr>
             </li>
             <li class="nav-item mt-1">
+              <h5 class="components-menu__header mt-1">Font Family</h5>
+            </li>
+            <li class="nav-item components-menu__category">
+              <select id="font" class="btn-white dropdown nav-link" required>
+                <option value="Arial">Arial</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Helvetica">Helvetica</option>
+                <option value="Tahoma">Tahoma</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Garamond">Garamond</option>
+                <option value="Roboto">Roboto</option>
+              </select>
+            </li>
+            <li class="nav-item components-menu__category">
+              <hr>
+            </li>
+            <li class="nav-item mt-1">
+              <h5 class="components-menu__header mt-1">Main Card Border Radius</h5>
+            </li>
+            <input onfocusout="reload()" name="mainBorderRadius" id="mainBorderRadius" type="range" value="10" min="0"
+              max="999" oninput="rangevalue.value=value+'px'" class="btn-white dropdown nav-link" />
+            <output id="rangevalue" class="btn-primary">10px</output>
+            <li class="nav-item mt-1">
+              <h5 class="components-menu__header mt-1">Image Border Radius</h5>
+            </li>
+            <input onfocusout="reload()" name="pictureBorderRadius" id="pictureBorderRadius" type="range" value="10"
+              min="0" max="99" oninput="rangevalueTwo.value=value+'%'" class="btn-white dropdown nav-link" />
+            <output id="rangevalueTwo" class="btn-primary">10%</output>
+            <li class="nav-item components-menu__category">
+              <hr>
+            </li>
+            <li class="nav-item mt-1">
               <h5 class="components-menu__header mt-1">Footer State</h5>
             </li>
             <li class="nav-item components-menu__category">
-              <select name="footerState" class="btn-white dropdown nav-link" required>
+              <select id="footerState" class="btn-white dropdown nav-link" required>
                 <option value="visible">Visible</option>
                 <option value="hidden">Hidden</option>
               </select>
             </li>
             <li class="nav-item components-menu__category">
               <hr>
-            </li>
-            <li class="nav-item components-menu__category">
-              <small id="result"></small>
             </li>
             <li class="nav-item components-menu__category">
               <small>&copy; 2021 All rights reserved, Profiler</small>
@@ -175,15 +230,18 @@
             <button onclick="generate();" class="btn btn-primary track-click mr-1" rel="nofollow noopener">
               Export project
             </button>
-            <a href="#" class="btn btn-secondary track-click mr-1" data-to rel="nofollow noopener">
-              <i class="icon-history"></i> Reload Preview
-            </a>
+            <!-- <button onclick="saveConfig();" class="btn btn-secondary track-click mr-1" rel="nofollow noopener">
+              Export Config
+            </button> -->
+            <!-- <button onclick="reload();" class="btn btn-primary track-click mr-1" rel="nofollow noopener">
+              <i class="fa-solid fa-arrow-rotate-right"></i>
+            </button> -->
           </div>
         </div>
+        <iframe title="Edited page content" height="100%" frameBorder="0" width="100%"
+          src="https://preview.profile.themes.omg.lol/index.php?bgBody=F2F3F7&bgmain=fff&mainRadius=10&pictureRadius=100&font=Consolas&titleColor=000&detailsColor=000&detailsIcon=000&pronounsColor=000&bioColor=000&linkColor=000&linkHover=000&verifyBadge=1DA1F2&verifyHover=1989ce&linkIcon=1989ce&linkIconHover=1989ce&textAlign=left&footerState=visible"
+          id="preview"></iframe>
       </main>
-      <iframe title="Edited page content " class="overflow-auto" height="100%" frameBorder="1" width="25%"
-        src="https://preview.profile.themes.omg.lol/index.php?bgBody=F2F3F7&bgmain=fff&mainRadius=10&pictureRadius=100&font=Consolas&titleColor=000&detailsColor=000&detailsIcon=000&pronounsColor=000&bioColor=000&linkColor=000&linkHover=000&verifyBadge=1DA1F2&verifyHover=1989ce&linkIcon=1989ce&linkIconHover=1989ce&textAlign=left&footerState=visible"
-        id="iframe-content"></iframe>
       <!-- <div class="browser browser--desktop" data-mockup="theme">
       <div class="">
         <div class="">
@@ -199,7 +257,7 @@
   </div>
   <script>
     Coloris({
-      // The bound input fields are wrapped in a div that adds a thumbnail showing the current color
+      // The bound input onfocusout="reload()"fields are wrapped in a div that adds a thumbnail showing the current color
       // and a button to open the color picker (for accessibility only). If you wish to keep your 
       // fields unaltered, set this to false, in which case you will lose the color thumbnail and 
       // the accessible button (not recommended).
@@ -209,7 +267,7 @@
       // More themes might be added in the future.
       theme: 'light',
 
-      // The margin between the input fields and the color picker's dialog.
+      // The margin between the input onfocusout="reload()"fields and the color picker's dialog.
       margin: 2,
 
       // Set the prefered color string format:

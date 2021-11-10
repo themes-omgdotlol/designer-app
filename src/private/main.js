@@ -7,6 +7,7 @@ const log = require("electron-log");
 const { autoUpdater } = require("electron-updater");
 // const rpc = require("discord-rich-presence")("881991336818008124");
 // const package = require("../../package.json");
+const checkInternetConnected = require("check-internet-connected");
 
 autoUpdater.logger = log;
 autoUpdater.logger.transports.file.level = "info";
@@ -19,6 +20,7 @@ function createWindow() {
     height: 650,
     minWidth: 900,
     minHeight: 650,
+    icon: "profiler.png",
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       nodeIntegration: true,
@@ -33,7 +35,15 @@ function createWindow() {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile("src/view/index.html");
+  checkInternetConnected()
+    .then(() => {
+      mainWindow.loadFile("src/view/index.html");
+    })
+    .catch((err) => {
+      mainWindow.loadFile("src/view/not-connected.html");
+    });
+
+  // mainWindow.loadFile("src/view/index.html");
   // mainWindow.setMenu(null);
 
   // const template = [
