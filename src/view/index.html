@@ -1,64 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US" class="">
 
 <head>
-  <meta charSet="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <title>Profiler</title>
-  <link rel="stylesheet" href="../public/undraw.css" />
-  <link rel="shortcut icon" href="../../assets/icon.ico" type="image/x-icon">
-  <!-- <link rel="stylesheet" href="../public/titleBar.css"> -->
-  <style>
-    #openBtn,
-    #createBtn {
-      display: inline-block !important;
-      /* additional code */
-    }
 
-    .footer {
-      position: fixed;
-      left: 10px;
-      bottom: 0;
-      width: 100%;
-    }
-  </style>
+  <link rel="stylesheet" href="../public/css/homepage.css">
 </head>
 
-<body>
-
-  <div id="__next">
-    <div class="page">
-      <div class="nav nav__hidden">
-        <div class="nav__container">
-          <div class="nav__logo">Profiler</div>
+<body class=" text-body font-bod overflow-x-hidden">
+  <section class="relative mb-20 overflow-hidden">
+    <div class="relative container px-4 mx-auto">
+      <div class="relative py-8 md:py-12 text-center">
+        <div class="load-animation reveal-superfast max-w-3xl mx-auto mb-8">
+          <div class="hidden lg:flex items-center justify-center mb-8">
+            <svg class="text-brand-blue" width="8" height="8" viewBox="0 0 8 8" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M6.4636 7.94155C6.54393 7.88563 6.59749 7.77377 6.57071 7.66192L6.14226 5.11727L7.90962 3.32762C7.98996 3.24373 8.01674 3.13188 7.98996 3.04799C7.96318 2.93614 7.88284 2.88021 7.77573 2.85225L5.33891 2.48873L4.241 0.167779C4.18745 0.0838897 4.10711 0 4 0C3.89289 0 3.81255 0.0559265 3.759 0.167779L2.66109 2.48873L0.224268 2.85225C0.117155 2.85225 0.03682 2.93614 0.0100418 3.04799C-0.0167364 3.15984 0.0100421 3.2717 0.0903768 3.32762L1.85774 5.11727L1.42929 7.66192C1.40251 7.77377 1.45607 7.88563 1.5364 7.94155C1.61674 7.99748 1.72385 8.02544 1.83096 7.96951L4.02678 6.7671L6.22259 7.96951C6.24937 7.99748 6.30293 7.99748 6.35648 7.99748C6.35648 7.99748 6.41004 7.99748 6.4636 7.94155Z"
+                fill="currentColor" />
+            </svg>
+            <svg class="text-brand-blue h-6 mx-2" width="8" height="24" viewBox="0 0 8 24" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M5.32603 22.2222C5.80044 22.8304 6.31799 23.3918 6.87866 24L7.48246 23.345C6.96491 22.7836 6.44737 22.2222 6.01609 21.6608C6.74927 20.6316 6.53363 18.9942 5.92983 17.6842C5.32603 18.0117 4.93787 18.7134 4.93787 19.5556C4.93787 19.7895 4.981 20.0234 5.02413 20.2573C4.54972 19.5088 4.11843 18.807 3.7734 18.0585C4.72223 17.3099 5.06726 15.7661 4.80849 14.4094C3.90279 14.5497 3.25586 15.4854 3.21273 16.655C2.91083 15.8129 2.73831 14.924 2.60893 14.0819C3.7734 13.7076 4.50659 12.3509 4.6791 10.9474C4.59284 10.9474 4.50659 10.9474 4.42033 10.9474C3.64401 10.9474 2.8677 11.6023 2.5658 12.5848C2.5658 11.7427 2.65206 10.8538 2.82457 9.96491C3.94591 9.91813 4.981 8.88889 5.54167 7.62573C5.32603 7.48538 5.06726 7.4386 4.80849 7.4386C4.29094 7.4386 3.7734 7.67251 3.34211 8.09357C3.55776 7.39181 3.85966 6.73684 4.16156 6.03509C5.23977 6.26901 6.44737 5.61403 7.30994 4.58479C7.00804 4.25731 6.57676 4.07018 6.10234 4.07018C5.75731 4.07018 5.36916 4.16374 5.02413 4.35088C5.19664 4.02339 5.36916 3.74269 5.5848 3.4152C6.1886 3.27485 6.70614 2.94737 7.0943 2.47953C7.65497 1.82456 8 0.982456 8 0C6.44737 0.0467836 5.19664 1.26316 4.93787 2.80702C4.72223 3.1345 4.50659 3.50877 4.33407 3.83626C4.3772 3.50877 4.42033 3.22807 4.42033 2.90058C4.42033 2.19883 4.24782 1.59064 3.85966 1.12281C2.47954 2.80702 2.52267 4.81871 3.38524 5.61404C3.04021 6.36257 2.73831 7.11111 2.47954 7.85965C2.35016 6.78363 1.962 5.89474 1.22882 5.47368C0.452501 7.39181 0.970044 9.21637 2.00513 9.73099C1.87574 10.4327 1.74636 11.1813 1.74636 11.883C1.70323 11.7895 1.6601 11.7427 1.61697 11.6491C1.22882 10.9474 0.668144 10.4795 0.0212151 10.386C-0.151299 12.3509 0.754401 13.848 1.78949 14.1287C1.87574 14.8304 2.00513 15.5322 2.22077 16.2339C1.70323 15.7193 1.09943 15.3918 0.495629 15.3918C0.409372 15.3918 0.323115 15.3918 0.236858 15.3918C0.581887 17.3567 1.91887 18.5263 2.99709 18.4327C3.29899 19.0877 3.64402 19.7427 4.03217 20.3977C3.55776 20.1637 3.08334 19.9766 2.65206 19.9766C2.35016 19.9766 2.09139 20.0234 1.83261 20.1637C2.69519 21.8947 4.33407 22.6433 5.32603 22.2222Z"
+                fill="currentColor" />
+            </svg>
+            <span class="text-secondary">The first and original</span>
+            <svg class="h-6 mx-2 text-brand-blue" width="8" height="24" viewBox="0 0 8 24" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.67397 22.2222C2.19956 22.8304 1.68201 23.3918 1.12134 24L0.517543 23.345C1.03509 22.7836 1.55263 22.2222 1.98391 21.6608C1.25073 20.6316 1.46637 18.9942 2.07017 17.6842C2.67397 18.0117 3.06213 18.7134 3.06213 19.5556C3.06213 19.7895 3.019 20.0234 2.97587 20.2573C3.45028 19.5088 3.88157 18.807 4.2266 18.0585C3.27777 17.3099 2.93274 15.7661 3.19151 14.4094C4.09721 14.5497 4.74414 15.4854 4.78727 16.655C5.08917 15.8129 5.26169 14.924 5.39107 14.0819C4.2266 13.7076 3.49341 12.3509 3.3209 10.9474C3.40716 10.9474 3.49341 10.9474 3.57967 10.9474C4.35599 10.9474 5.1323 11.6023 5.4342 12.5848C5.4342 11.7427 5.34794 10.8538 5.17543 9.96491C4.05409 9.91813 3.019 8.88889 2.45833 7.62573C2.67397 7.48538 2.93274 7.4386 3.19151 7.4386C3.70906 7.4386 4.2266 7.67251 4.65789 8.09357C4.44224 7.39181 4.14034 6.73684 3.83844 6.03509C2.76023 6.26901 1.55263 5.61403 0.690057 4.58479C0.991957 4.25731 1.42324 4.07018 1.89766 4.07018C2.24269 4.07018 2.63084 4.16374 2.97587 4.35088C2.80336 4.02339 2.63084 3.74269 2.4152 3.4152C1.8114 3.27485 1.29386 2.94737 0.9057 2.47953C0.345028 1.82456 0 0.982456 0 0C1.55263 0.0467836 2.80336 1.26316 3.06213 2.80702C3.27777 3.1345 3.49341 3.50877 3.66593 3.83626C3.6228 3.50877 3.57967 3.22807 3.57967 2.90058C3.57967 2.19883 3.75218 1.59064 4.14034 1.12281C5.52046 2.80702 5.47733 4.81871 4.61476 5.61404C4.95979 6.36257 5.26169 7.11111 5.52046 7.85965C5.64984 6.78363 6.038 5.89474 6.77118 5.47368C7.5475 7.39181 7.02996 9.21637 5.99487 9.73099C6.12426 10.4327 6.25364 11.1813 6.25364 11.883C6.29677 11.7895 6.3399 11.7427 6.38303 11.6491C6.77118 10.9474 7.33186 10.4795 7.97878 10.386C8.1513 12.3509 7.2456 13.848 6.21051 14.1287C6.12426 14.8304 5.99487 15.5322 5.77923 16.2339C6.29677 15.7193 6.90057 15.3918 7.50437 15.3918C7.59063 15.3918 7.67688 15.3918 7.76314 15.3918C7.41811 17.3567 6.08113 18.5263 5.00291 18.4327C4.70101 19.0877 4.35598 19.7427 3.96783 20.3977C4.44224 20.1637 4.91666 19.9766 5.34794 19.9766C5.64984 19.9766 5.90861 20.0234 6.16739 20.1637C5.30481 21.8947 3.66593 22.6433 2.67397 22.2222Z"
+                fill="currentColor" />
+            </svg>
+            <svg class="text-brand-blue" width="8" height="8" viewBox="0 0 8 8" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M6.4636 7.94155C6.54393 7.88563 6.59749 7.77377 6.57071 7.66192L6.14226 5.11727L7.90962 3.32762C7.98996 3.24373 8.01674 3.13188 7.98996 3.04799C7.96318 2.93614 7.88284 2.88021 7.77573 2.85225L5.33891 2.48873L4.241 0.167779C4.18745 0.0838897 4.10711 0 4 0C3.89289 0 3.81255 0.0559265 3.759 0.167779L2.66109 2.48873L0.224268 2.85225C0.117155 2.85225 0.03682 2.93614 0.0100418 3.04799C-0.0167364 3.15984 0.0100421 3.2717 0.0903768 3.32762L1.85774 5.11727L1.42929 7.66192C1.40251 7.77377 1.45607 7.88563 1.5364 7.94155C1.61674 7.99748 1.72385 8.02544 1.83096 7.96951L4.02678 6.7671L6.22259 7.96951C6.24937 7.99748 6.30293 7.99748 6.35648 7.99748C6.35648 7.99748 6.41004 7.99748 6.4636 7.94155Z"
+                fill="currentColor" />
+            </svg>
+          </div>
+          <h1 class="text-5xl md:text-6xl mb-4 font-bold font-heading leading-tight"
+            style="-webkit-transform:translate3d(0,0,0);">
+            <span class="inline-block pt-1">Create </span>
+            <br class="sm:hidden">
+            <span class="inline-block pl-2 pr-4 relative text-white bg-brand-tailwind"
+              style="border-radius: 91% 9% 90% 10% / 29% 82% 18% 71%">omg.lol</span>
+            <span class="block">templates in minutes</span>
+          </h1>
+          <p class="text-secondary text-lg md:text-2xl leading-relaxed">The #1 omg.lol theme designer.</p>
         </div>
-      </div>
-      <header class="page__header" style="visibility:visible">
-        <h1>Profiler</h1>
-      </header>
-      <div class="subheader">
-        <div class="subheader__container">
-          <div class="page__address">Design your own custom omg.lol profile</div>
-          <p class="page__description">You can create your own profile by creating a new one. (In the future we will add
-            a feature to make it possible to save and open a theme.</p>
-        </div>
-      </div>
-      <div class="search__status">
-        <div class="search__container">
-          <button id="createBtn" onclick="window.location.href = 'designer.html'" rel="noopener noreferrer"
-            class="button__primary">Create new theme</button>
-          <!-- <button id="testBtn" onclick="window.location.href = 'test.html'" rel="noopener noreferrer"
-            class="button__secondary">Test file</button><br> -->
-          <!-- <button id="openBtn" class="button__secondary">Open a theme</button> -->
-
-          <img src="../public/img.svg" class="search__status__img" />
-          <p class="search__status__message">Get started!</p>
+        <div class="load-animation reveal-fast">
+          <button onclick="window.location.href = 'designer.html'"
+            class="inline-block py-4 px-6 xs:py-4 xs:px-8 mr-4 bg-brand-blue hover:bg-blue-700 xs:text-lg text-white text-center font-semibold leading-none rounded-3xl transition duration-100">Create
+            Theme</button>
+          <!-- <button onclick="window.location.href = 'open.html'"
+            class="inline-block py-4 px-6 xs:py-4 xs:px-8 bg-white hover:bg-blueGray-800 hover:text-white xs:text-lg text-center font-semibold leading-none rounded-3xl shadow-button transition duration-100"
+            data-section="purchase">Open Theme</button> -->
         </div>
       </div>
     </div>
-  </div>
-
-  <script src="../private/renderer.js"></script>
+  </section>
 </body>
 
 </html>

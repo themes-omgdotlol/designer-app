@@ -44,7 +44,7 @@ function createWindow() {
     });
 
   // mainWindow.loadFile("src/view/index.html");
-  // mainWindow.setMenu(null);
+  mainWindow.setMenu(null);
 
   // const template = [
   //   // { role: 'fileMenu' }

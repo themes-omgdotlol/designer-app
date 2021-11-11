@@ -51,7 +51,7 @@
     "linux": {
       "target": [
         "AppImage",
-	"deb"
+        "deb"
       ],
       "maintainer": "MatseVH",
       "icon": "./assets/profiler.ico",
