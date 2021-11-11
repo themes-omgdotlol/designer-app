@@ -7,14 +7,14 @@ Build it yourself:
 - Windows
   Clone this repository
   run: npm install
-  ru:n npm runbuild:win
+  run: npm runbuild:win
 
 - Mac
   Clone this repository
   run: npm install
-  ru:n npm runbuild:mac
+  run: npm runbuild:mac
 
 - Linux
   Clone this repository
   run: npm install
-  ru:n npm runbuild:linux
+  run: npm runbuild:linux
