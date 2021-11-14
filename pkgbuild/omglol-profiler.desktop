@@ -3,6 +3,6 @@ Encoding=UTF-8
 Version=0.0.1
 Type=Application
 Terminal=false
-Exec=electron /usr/lib/profiler.asar %u
+Exec=electron /usr/lib/omglol-profiler.asar %u
 Name=Profiler
 Icon=profiler.png
