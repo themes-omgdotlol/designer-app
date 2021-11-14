@@ -8,9 +8,6 @@ license=('MIT')
 depends=('electron')
 makedepends=('git')
 arch=('any')
-source=(app.asar
-        512x512.png
-        Profiler.desktop)
 source=('designer-app::git://github.com/themes-omgdotlol/designer-app.git')
 
 package() {
