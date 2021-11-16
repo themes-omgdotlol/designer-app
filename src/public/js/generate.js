@@ -47,9 +47,9 @@ function generate() {
     [
       "/*\nCopyright (c) 2021 Profiler. All rights reserved.\n\nAuthor: Profiler (@profiler_app)\nDesigner Version: Beta\nDescription: Create your own custom profile design Profiler\n\nTheme: " +
         themeName.value +
-        "\n*/\n\n:root {\n  --background-color: " +
+        "\n*/\n\n:root {\n  --background-color: #" +
         bodyBG.value.substring(1) +
-        ";\n  --main-background-color: " +
+        ";\n  --main-background-color: #" +
         mainBG.value.substring(1) +
         ";\n  --main-border-radius: " +
         mainRadius.value +
@@ -57,27 +57,27 @@ function generate() {
         pictureRadius.value +
         "%;\n  --font: " +
         font.value +
-        ";\n  --title-color: " +
+        ";\n  --title-color: #" +
         titleText.value.substring(1) +
-        ";\n  --details-color: " +
+        ";\n  --details-color: #" +
         detailsText.value.substring(1) +
         ";\n  --details-icon-color: " +
         pronounsText.value.substring(1) +
-        ";\n  --pronouns-color: " +
+        ";\n  --pronouns-color: #" +
         bioText.value.substring(1) +
-        ";\n  --bio-color: " +
+        ";\n  --bio-color: #" +
         bioText.value.substring(1) +
-        ";\n  --link-color: " +
+        ";\n  --link-color: #" +
         linkIcon.value.substring(1) +
-        ";\n  --link-hover-color: " +
+        ";\n  --link-hover-color: #" +
         linkHover.value.substring(1) +
-        ";\n  --verification-badge-color: " +
+        ";\n  --verification-badge-color: #" +
         verificationColor.value.substring(1) +
-        ";\n  --verification-badge-hover-color: " +
+        ";\n  --verification-badge-hover-color: #" +
         verificationHover.value.substring(1) +
-        ";\n  --link-icon-color: " +
+        ";\n  --link-icon-color: #" +
         linkIcon.value.substring(1) +
-        ";\n  --link-icon-hover-color: " +
+        ";\n  --link-icon-hover-color: #" +
         LinkIconHover.value.substring(1) +
         ";\n\n  --text-align: " +
         textAlign.value +
